@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<title>Go ahead man, you got this.</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="The Confidence Boost Button"/>
+		<meta name="keywords" CONTENT="You got this"/>
+		<link rel="icon" href="/icon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="/static/img/touch.png" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			function im(element, image) {
+				element.src=image
+			}
+			id=0;
+			function playNew() {
+				zone = document.getElementById("audioElements");
+				tag = document.createElement("audio");
+				tag.setAttribute("preload","auto");
+				tag.setAttribute("autoplay","autoplay");
+				tag.setAttribute("src","yougotthisman.mp3");
+				tag.setAttribute("id","audio"+id);
+				zone.appendChild(tag);
+				tag.play();
+				setTimeout('x=document.getElementById("audio'+id+'");x.parentNode.removeChild(x);', 3500);
+				id++;
+			}
+		</script>
+		<style type="text/css">
+			body {
+				font-family:arial;
+				color:#BBB;
+				size:10px
+			}
+		
+			a:visited {
+				color:#BBB;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="height:440px;width:392px;position:absolute;top:50%;left:50%;margin-top:-220px;margin-left:-196px">
+			<img src="button.gif" alt="Click Me" onMouseOver="im(this, 'buttono.gif')" onMouseOut="im(this, 'button.gif')" onClick="playNew()"/>
+		</div>
+		<div id="audioElements"></div>
+		<div style="position:absolute;bottom:20px;left:10px;">
+			Inspired by <a href="https://twitter.com/dpedu">dpedu's</a> <a href="http://inception.davepedu.com/">Inception Button</a>
+		</div>
+	</body>
+</html>
